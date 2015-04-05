@@ -7,9 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "PeerListViewController.h"
 
-
-
+static NSString * const SegueIdentifierPushPeerListView = @"PushPeerListViewSegue";
 typedef enum pictureType {
     Heart,
     Star
@@ -32,6 +32,21 @@ typedef enum pictureType {
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:SegueIdentifierPushPeerListView]) {
+        PeerListViewController *viewController = segue.destinationViewController;
+        [viewController createSessionWithDisplayName:@"iphone"];
+    }
+}
+- (IBAction)createSessionButtonDidTouch:(id)sender {
+    NSLog(@"iphone");
+    if (@"iphone" == 0) {
+        return;
+    }
+    
+    [self performSegueWithIdentifier:SegueIdentifierPushPeerListView sender:self];
 }
 
 - (IBAction)pushDeviceConnect:(id)sender {

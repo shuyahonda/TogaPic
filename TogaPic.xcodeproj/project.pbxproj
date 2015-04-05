@@ -14,6 +14,8 @@
 		AE856DC41AD0FBD100116AFA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE856DC31AD0FBD100116AFA /* Images.xcassets */; };
 		AE856DC71AD0FBD100116AFA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE856DC51AD0FBD100116AFA /* LaunchScreen.xib */; };
 		AE856DD31AD0FBD100116AFA /* TogaPicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE856DD21AD0FBD100116AFA /* TogaPicTests.m */; };
+		D830A15E1AD11437008F07C7 /* SessionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D830A15D1AD11437008F07C7 /* SessionHelper.m */; };
+		D830A1611AD1148B008F07C7 /* PeerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D830A1601AD1148B008F07C7 /* PeerListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		AE856DCC1AD0FBD100116AFA /* TogaPicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TogaPicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE856DD11AD0FBD100116AFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE856DD21AD0FBD100116AFA /* TogaPicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TogaPicTests.m; sourceTree = "<group>"; };
+		D830A15D1AD11437008F07C7 /* SessionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SessionHelper.m; path = ../../MultipeerConnectivitySample/P2PTest/SessionHelper.m; sourceTree = "<group>"; };
+		D830A15F1AD1148B008F07C7 /* PeerListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PeerListViewController.h; path = ../../MultipeerConnectivitySample/P2PTest/PeerListViewController.h; sourceTree = "<group>"; };
+		D830A1601AD1148B008F07C7 /* PeerListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PeerListViewController.m; path = ../../MultipeerConnectivitySample/P2PTest/PeerListViewController.m; sourceTree = "<group>"; };
+		D8EEBEDE1AD113F800E65B0C /* SessionHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SessionHelper.h; path = ../../MultipeerConnectivitySample/P2PTest/SessionHelper.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,10 @@
 				AE856DBB1AD0FBD100116AFA /* AppDelegate.m */,
 				AE856DBD1AD0FBD100116AFA /* ViewController.h */,
 				AE856DBE1AD0FBD100116AFA /* ViewController.m */,
+				D830A15F1AD1148B008F07C7 /* PeerListViewController.h */,
+				D830A1601AD1148B008F07C7 /* PeerListViewController.m */,
+				D8EEBEDE1AD113F800E65B0C /* SessionHelper.h */,
+				D830A15D1AD11437008F07C7 /* SessionHelper.m */,
 				AE856DC01AD0FBD100116AFA /* Main.storyboard */,
 				AE856DC31AD0FBD100116AFA /* Images.xcassets */,
 				AE856DC51AD0FBD100116AFA /* LaunchScreen.xib */,
@@ -221,7 +231,9 @@
 			files = (
 				AE856DBF1AD0FBD100116AFA /* ViewController.m in Sources */,
 				AE856DBC1AD0FBD100116AFA /* AppDelegate.m in Sources */,
+				D830A15E1AD11437008F07C7 /* SessionHelper.m in Sources */,
 				AE856DB91AD0FBD100116AFA /* main.m in Sources */,
+				D830A1611AD1148B008F07C7 /* PeerListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +426,7 @@
 				AE856DD81AD0FBD100116AFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AE856DD91AD0FBD100116AFA /* Build configuration list for PBXNativeTarget "TogaPicTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +435,7 @@
 				AE856DDB1AD0FBD100116AFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
