@@ -92,13 +92,13 @@ static NSString * const ServiceType = @"cm-p2ptest";
     NSLog(@"receive text : %@",text);
     NSRange range = [text rangeOfString:@","];
     
-    if (text != nil) {
-        NSLog(@"文字列が送られました");
+    if (text == nil) {
+        NSLog(@"画像が送られました");
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.delegate sessionHelperDidRecieveImage:image peer:peerID];
         });
     } else {
-        NSLog(@"データが送られました");
+        NSLog(@"文字列が送られました");
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.delegate sessionHelperDidRecieveText:text peer:peerID];
         });
