@@ -38,6 +38,9 @@
                                         <state key="normal" title="♥">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pushHeartButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="PPj-oI-ORo"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dv8-N6-tBa">
                                         <rect key="frame" x="454" y="10" width="30" height="30"/>
@@ -50,6 +53,9 @@
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pushBlackButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="HHJ-Le-e15"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xCG-Ru-IuR">
                                         <rect key="frame" x="500" y="10" width="30" height="30"/>
@@ -61,6 +67,9 @@
                                         <state key="normal" title="●">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pushBlueButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bb9-KL-NOr"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ns-AK-gHh">
                                         <rect key="frame" x="550" y="10" width="30" height="30"/>
@@ -73,6 +82,9 @@
                                             <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pushRedButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="tB5-SO-Q8A"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYC-RA-P4z">
                                         <rect key="frame" x="46" y="10" width="30" height="30"/>
@@ -83,6 +95,9 @@
                                         <state key="normal" title="🌟">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pushStarButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ofi-Ar-EFW"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -100,8 +115,8 @@
                                     <constraint firstAttribute="centerY" secondItem="Dv8-N6-tBa" secondAttribute="centerY" id="tTe-wX-lUi"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YEU-YW-2fm">
-                                <rect key="frame" x="0.0" y="65" width="600" height="485"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YEU-YW-2fm">
+                                <rect key="frame" x="0.0" y="64" width="600" height="485"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="-141" y="283" width="610" height="222"/>
                                 </variation>

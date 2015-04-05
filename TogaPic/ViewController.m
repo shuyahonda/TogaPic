@@ -27,4 +27,23 @@
 - (IBAction)pushDeviceConnect:(id)sender {
 }
 
+
+
+#pragma mark - IBAction
+
+- (IBAction)pushRedButton:(id)sender {
+}
+
+- (IBAction)pushBlueButton:(id)sender {
+}
+
+- (IBAction)pushBlackButton:(id)sender {
+}
+
+- (IBAction)pushStarButton:(id)sender {
+}
+
+- (IBAction)pushHeartButton:(id)sender {
+}
+
 @end
