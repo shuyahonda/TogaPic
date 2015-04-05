@@ -29,7 +29,10 @@ typedef enum pictureType {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view, typically from a nib.
+    self.sessionHelper = [[SessionHelper alloc] initWithDisplayName:@"test"];
+    self.sessionHelper.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -145,6 +148,16 @@ typedef enum pictureType {
 - (void)browserViewControllerWasCancelled:(MCBrowserViewController *)browserViewController
 {
     [browserViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark Sesstion Helper Delegate
+
+- (void)sessionHelperDidChangeConnectedPeers:(SessionHelper *)sessionHelper {
+    
+}
+
+- (void)sessionHelperDidRecieveImage:(UIImage *)image peer:(MCPeerID *)peerID {
+    
 }
 
 
