@@ -40,6 +40,8 @@ static NSString * const ServiceType = @"cm-p2ptest";
         self.connectedPeerIDs = [NSMutableArray new];
         
         MCPeerID *peerID = [[MCPeerID alloc] initWithDisplayName:displayName];
+        NSString *string = [[NSString alloc] initWithString:@"xxx"];
+        
         _session = [[MCSession alloc] initWithPeer:peerID];
         _session.delegate = self;
         
@@ -133,11 +135,17 @@ didReceiveStream:(NSInputStream *)stream
     NSError *error;
     [self.session sendData:data
                    toPeers:@[peerID]
-                  withMode:MCSessionSendDataReliable
+                  withMode:MCSessionSendDataUnreliable
                      error:&error];
     if (error) {
         NSLog(@"Failed %@", error);
     }
+}
+
+- (void)sendText:(NSString *)string peerID:(MCPeerID *)peerID
+{
+ 
+    
 }
 
 @end

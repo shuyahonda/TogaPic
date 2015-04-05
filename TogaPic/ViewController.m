@@ -160,6 +160,7 @@ typedef enum pictureType {
 
 - (void)sessionHelperDidRecieveImage:(UIImage *)image peer:(MCPeerID *)peerID {
     self.imageView.image = image;
+    NSLog(@"here");
     
 }
 
