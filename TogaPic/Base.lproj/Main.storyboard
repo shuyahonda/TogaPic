@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--接続先名-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
@@ -17,12 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YEU-YW-2fm">
-                                <rect key="frame" x="0.0" y="73" width="600" height="469"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="-141" y="283" width="610" height="222"/>
-                                </variation>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrZ-OA-JoR">
                                 <rect key="frame" x="285" y="285" width="30" height="30"/>
                                 <state key="normal" title="接続">
@@ -106,17 +100,30 @@
                                     <constraint firstAttribute="centerY" secondItem="Dv8-N6-tBa" secondAttribute="centerY" id="tTe-wX-lUi"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YEU-YW-2fm">
+                                <rect key="frame" x="0.0" y="65" width="600" height="485"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="-141" y="283" width="610" height="222"/>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="OrZ-OA-JoR" secondAttribute="centerY" id="GL9-rH-CH9"/>
+                            <constraint firstItem="YEU-YW-2fm" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="KE2-ob-2n9"/>
+                            <constraint firstItem="YEU-YW-2fm" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="1" id="MQq-Tt-5OL"/>
                             <constraint firstItem="KZf-Vm-07f" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="VE8-1I-cep"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KZf-Vm-07f" secondAttribute="trailing" constant="-16" id="bGy-bQ-8tq"/>
+                            <constraint firstAttribute="trailing" secondItem="YEU-YW-2fm" secondAttribute="trailing" id="djU-Fs-Z9O"/>
+                            <constraint firstItem="KZf-Vm-07f" firstAttribute="top" secondItem="YEU-YW-2fm" secondAttribute="bottom" id="kbT-UV-RtN"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="KZf-Vm-07f" secondAttribute="bottom" id="pp9-Jj-yR1"/>
                             <constraint firstAttribute="centerX" secondItem="OrZ-OA-JoR" secondAttribute="centerX" id="q8J-jX-GLa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="yaU-MG-CUq"/>
+                    <navigationItem key="navigationItem" title="接続先名" id="yaU-MG-CUq">
+                        <barButtonItem key="leftBarButtonItem" title="保存" id="DVM-3q-omx"/>
+                        <barButtonItem key="rightBarButtonItem" title="接続" id="MT9-lY-nY5"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
