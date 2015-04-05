@@ -79,6 +79,13 @@ typedef enum pictureType {
 #pragma mark - Touch Event
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    }
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInView:self.imageView];
     NSLog(@"Touch ImageViewLocationx :%f y:%f", location.x, location.y);
@@ -99,16 +106,6 @@ typedef enum pictureType {
     } else {
         NSLog(@"絵のタイプが選択されていません");
     }
-}
-
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-}
-
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    UITouch *touch = [touches anyObject];
-    CGPoint location = [touch locationInView:self.imageView];
-    NSLog(@"Touch ImageViewLocationx :%f y:%f", location.x, location.y);
 }
 
 
