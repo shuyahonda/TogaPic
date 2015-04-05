@@ -167,7 +167,8 @@ typedef enum pictureType {
 #pragma mark - Private
 
 - (void)sendImage {
-    [self.sessionHelper sendImage:self.imageView.image peerID:[self.sessionHelper connectedPeerIDAtIndex:1]];
+    NSLog(@"%d",self.sessionHelper.connectedPeersCount);
+    [self.sessionHelper sendImage:self.imageView.image peerID:[self.sessionHelper connectedPeerIDAtIndex:0]];
 }
 
 
