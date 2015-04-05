@@ -79,7 +79,8 @@ typedef enum pictureType {
 #pragma mark - Touch Event
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    }
+
+}
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
     
@@ -88,8 +89,12 @@ typedef enum pictureType {
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInView:self.imageView];
+    CGPoint viewLocation = [touch locationInView:self.view];
     NSLog(@"Touch ImageViewLocationx :%f y:%f", location.x, location.y);
     
+    if (!CGRectContainsPoint(self.imageView.frame, viewLocation)) {
+        return;
+    }
     
     if (self.selectedPictureType == Heart) {
         UIImage *image = [UIImage imageNamed:@"heart"];
