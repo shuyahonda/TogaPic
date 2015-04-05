@@ -174,7 +174,7 @@ typedef enum pictureType {
     NSArray *separatedText = [text componentsSeparatedByString:@","];
     NSLog(@"%@",separatedText);
     
-    if ([separatedText isEqual:@"heart"]) {
+    if ([separatedText[0] isEqual:@"heart"]) {
         UIImage *image = [UIImage imageNamed:@"heart"];
         
         NSString *x = separatedText[1];
@@ -201,7 +201,6 @@ typedef enum pictureType {
         [self sendText:@"star" rect:rect];
 
     }
-    
 }
 
 
