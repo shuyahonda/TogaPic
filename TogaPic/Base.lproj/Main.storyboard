@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7Cm-Na-zNc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D130a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7Cm-Na-zNc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -17,15 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrZ-OA-JoR">
-                                <rect key="frame" x="285" y="285" width="30" height="30"/>
-                                <state key="normal" title="接続">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="pushDeviceConnect:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Kba-Uy-cv1"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KZf-Vm-07f">
                                 <rect key="frame" x="0.0" y="550" width="600" height="50"/>
                                 <subviews>
@@ -147,7 +138,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="OrZ-OA-JoR" secondAttribute="centerY" id="GL9-rH-CH9"/>
                             <constraint firstItem="YEU-YW-2fm" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="KE2-ob-2n9"/>
                             <constraint firstItem="YEU-YW-2fm" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="1" id="MQq-Tt-5OL"/>
                             <constraint firstItem="KZf-Vm-07f" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="VE8-1I-cep"/>
@@ -155,7 +145,6 @@
                             <constraint firstAttribute="trailing" secondItem="YEU-YW-2fm" secondAttribute="trailing" id="djU-Fs-Z9O"/>
                             <constraint firstItem="KZf-Vm-07f" firstAttribute="top" secondItem="YEU-YW-2fm" secondAttribute="bottom" id="kbT-UV-RtN"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="KZf-Vm-07f" secondAttribute="bottom" id="pp9-Jj-yR1"/>
-                            <constraint firstAttribute="centerX" secondItem="OrZ-OA-JoR" secondAttribute="centerX" id="q8J-jX-GLa"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="接続先名" id="yaU-MG-CUq">
