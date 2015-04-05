@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "PeerListViewController.h"
+#import "SessionHelper.h"
 
 static NSString * const SegueIdentifierPushPeerListView = @"PushPeerListViewSegue";
 typedef enum pictureType {
@@ -15,10 +16,12 @@ typedef enum pictureType {
     Star
 }pictureType;
 
-@interface ViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface ViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, MCBrowserViewControllerDelegate, SessionHelperDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property pictureType selectedPictureType;
+@property (nonatomic) SessionHelper *sessionHelper;
+@property (nonatomic) MCPeerID *selectedPeerID;
 
 @end
 
@@ -33,20 +36,13 @@ typedef enum pictureType {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:SegueIdentifierPushPeerListView]) {
-        PeerListViewController *viewController = segue.destinationViewController;
-        [viewController createSessionWithDisplayName:@"iphone"];
-    }
-}
+
 - (IBAction)createSessionButtonDidTouch:(id)sender {
-    NSLog(@"iphone");
-    if (@"iphone" == 0) {
-        return;
-    }
+    MCBrowserViewController *viewController = [[MCBrowserViewController alloc] initWithServiceType:self.sessionHelper.serviceType
+                                                                                           session:self.sessionHelper.session];
+    viewController.delegate = self;
     
-    [self performSegueWithIdentifier:SegueIdentifierPushPeerListView sender:self];
+    [self presentViewController:viewController animated:YES completion:nil];
 }
 
 - (IBAction)pushDeviceConnect:(id)sender {
@@ -131,6 +127,24 @@ typedef enum pictureType {
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
     
+}
+
+# pragma mark - MCBrowseViewController
+- (BOOL)browserViewController:(MCBrowserViewController *)browserViewController
+      shouldPresentNearbyPeer:(MCPeerID *)peerID
+            withDiscoveryInfo:(NSDictionary *)info
+{
+    return YES;
+}
+
+- (void)browserViewControllerDidFinish:(MCBrowserViewController *)browserViewController
+{
+    [browserViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)browserViewControllerWasCancelled:(MCBrowserViewController *)browserViewController
+{
+    [browserViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 
