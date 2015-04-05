@@ -152,7 +152,7 @@ didReceiveStream:(NSInputStream *)stream
     NSError *error;
     [self.session sendData:data
                    toPeers:@[peerID]
-                  withMode:MCSessionSendDataUnreliable
+                  withMode:MCSessionSendDataReliable
                      error:&error];
     if (error) {
         NSLog(@"Failed %@", error);

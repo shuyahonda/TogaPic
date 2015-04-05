@@ -78,7 +78,6 @@ typedef enum pictureType {
     [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
     [self presentViewController:imagePicker animated:YES completion:nil];
     
-    [self sendImage];
 }
 
 #pragma mark - ImagePickerControllerDelegate
@@ -88,6 +87,7 @@ typedef enum pictureType {
                   editingInfo:(NSDictionary *)editingInfo
 {
     [self.imageView setImage:image];
+    [self sendImage];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
