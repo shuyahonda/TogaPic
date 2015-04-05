@@ -17,6 +17,7 @@
 @required
 - (void)sessionHelperDidChangeConnectedPeers:(SessionHelper *)sessionHelper;
 - (void)sessionHelperDidRecieveImage:(UIImage *)image peer:(MCPeerID *)peerID;
+- (void)sessionHelperDidRecieveText:(NSString *)text peer:(MCPeerID *)peerID;
 
 @end
 
@@ -31,5 +32,6 @@
 
 - (MCPeerID *)connectedPeerIDAtIndex:(NSUInteger)index;
 - (void)sendImage:(UIImage *)image peerID:(MCPeerID *)peerID;
+- (void)sendText:(NSString *)string peerID:(MCPeerID *)peerID;
 
 @end

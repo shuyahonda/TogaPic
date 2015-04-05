@@ -87,9 +87,26 @@ static NSString * const ServiceType = @"cm-p2ptest";
 - (void)session:(MCSession *)session didReceiveData:(NSData *)data fromPeer:(MCPeerID *)peerID
 {
     UIImage *image = [UIImage imageWithData:data];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.delegate sessionHelperDidRecieveImage:image peer:peerID];
-    });
+    NSString *text = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+
+    NSLog(@"receive text : %@",text);
+    NSRange range = [text rangeOfString:@","];
+    
+    if (range.location == NSNotFound) {
+        NSLog(@"検索対象が存在しない場合の処理");
+    }
+
+    
+    
+    if (range.location == NSNotFound) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.delegate sessionHelperDidRecieveImage:image peer:peerID];
+        });
+    } else {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.delegate sessionHelperDidRecieveText:text peer:peerID];
+        });
+    }
 }
 
 - (void)session:(MCSession *)session
@@ -144,8 +161,16 @@ didReceiveStream:(NSInputStream *)stream
 
 - (void)sendText:(NSString *)string peerID:(MCPeerID *)peerID
 {
- 
+    NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
     
+    NSError *error;
+    [self.session sendData:data
+                   toPeers:@[peerID]
+                  withMode:MCSessionSendDataReliable
+                     error:&error];
+    if (error) {
+        NSLog(@"Failed %@", error);
+    }
 }
 
 @end

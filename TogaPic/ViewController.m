@@ -118,12 +118,17 @@ typedef enum pictureType {
         UIImageView *heartImage = [[UIImageView alloc] initWithImage:image];
         heartImage.frame = rect;
         [self.imageView addSubview:heartImage];
+        
+        [self sendText:@"heart" rect:rect];
+        
     } else if (self.selectedPictureType == Star) {
         UIImage *image = [UIImage imageNamed:@"star"];
         CGRect rect = CGRectMake(location.x, location.y, 30, 30);
         UIImageView *heartImage = [[UIImageView alloc] initWithImage:image];
         heartImage.frame = rect;
         [self.imageView addSubview:heartImage];
+        
+        [self sendText:@"star" rect:rect];
     } else {
         NSLog(@"絵のタイプが選択されていません");
     }
@@ -159,8 +164,43 @@ typedef enum pictureType {
 }
 
 - (void)sessionHelperDidRecieveImage:(UIImage *)image peer:(MCPeerID *)peerID {
+    NSLog(@"画像を受信しました");
     self.imageView.image = image;
-    NSLog(@"here");
+}
+
+- (void)sessionHelperDidRecieveText:(NSString *)text peer:(MCPeerID *)peerID {
+    NSLog(@"テキストを受信しました -> %@",text);
+    
+    NSArray *separatedText = [text componentsSeparatedByString:@","];
+    NSLog(@"%@",separatedText);
+    
+    if ([separatedText isEqual:@"heart"]) {
+        UIImage *image = [UIImage imageNamed:@"heart"];
+        
+        NSString *x = separatedText[1];
+        NSString *y = separatedText[2];
+        
+                       
+        CGRect rect = CGRectMake([x floatValue] , [y floatValue], 30, 30);
+        UIImageView *heartImage = [[UIImageView alloc] initWithImage:image];
+        heartImage.frame = rect;
+        [self.imageView addSubview:heartImage];
+    } else {
+        UIImage *image = [UIImage imageNamed:@"star"];
+        
+        NSString *x = separatedText[1];
+        NSString *y = separatedText[2];
+        
+        
+        CGRect rect = CGRectMake([x floatValue] , [y floatValue], 30, 30);
+
+        UIImageView *starImage = [[UIImageView alloc] initWithImage:image];
+        starImage.frame = rect;
+        [self.imageView addSubview:starImage];
+        
+        [self sendText:@"star" rect:rect];
+
+    }
     
 }
 
@@ -168,10 +208,17 @@ typedef enum pictureType {
 #pragma mark - Private
 
 - (void)sendImage {
-    NSLog(@"%d",self.sessionHelper.connectedPeersCount);
+    NSLog(@"%ld",self.sessionHelper.connectedPeersCount);
     [self.sessionHelper sendImage:self.imageView.image peerID:[self.sessionHelper connectedPeerIDAtIndex:0]];
 }
 
-
+- (void)sendText:(NSString *)type rect:(CGRect)rect {
+    
+    // format -> heart,100,120
+    // type,location.x,location.y
+    
+    NSString *text = [NSString stringWithFormat:@"%@,%f,%f",type,rect.origin.x,rect.origin.y];//
+    [self.sessionHelper sendText:text peerID:[self.sessionHelper connectedPeerIDAtIndex:0]];
+}
 
 @end
