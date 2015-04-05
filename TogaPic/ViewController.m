@@ -77,6 +77,8 @@ typedef enum pictureType {
     imagePicker.delegate = self;
     [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
     [self presentViewController:imagePicker animated:YES completion:nil];
+    
+    [self sendImage];
 }
 
 #pragma mark - ImagePickerControllerDelegate
@@ -157,8 +159,17 @@ typedef enum pictureType {
 }
 
 - (void)sessionHelperDidRecieveImage:(UIImage *)image peer:(MCPeerID *)peerID {
+    self.imageView.image = image;
     
 }
+
+
+#pragma mark - Private
+
+- (void)sendImage {
+    [self.sessionHelper sendImage:self.imageView.image peerID:[self.sessionHelper connectedPeerIDAtIndex:1]];
+}
+
 
 
 @end
