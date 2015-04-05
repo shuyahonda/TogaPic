@@ -17,8 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrZ-OA-JoR">
-                                <rect key="frame" x="547" y="33" width="30" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YEU-YW-2fm">
+                                <rect key="frame" x="0.0" y="73" width="600" height="469"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="-141" y="283" width="610" height="222"/>
+                                </variation>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrZ-OA-JoR">
+                                <rect key="frame" x="285" y="285" width="30" height="30"/>
                                 <state key="normal" title="接続">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -100,18 +106,14 @@
                                     <constraint firstAttribute="centerY" secondItem="Dv8-N6-tBa" secondAttribute="centerY" id="tTe-wX-lUi"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YEU-YW-2fm">
-                                <rect key="frame" x="0.0" y="73" width="600" height="469"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="-141" y="283" width="610" height="222"/>
-                                </variation>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerY" secondItem="OrZ-OA-JoR" secondAttribute="centerY" id="GL9-rH-CH9"/>
                             <constraint firstItem="KZf-Vm-07f" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="VE8-1I-cep"/>
                             <constraint firstAttribute="trailingMargin" secondItem="KZf-Vm-07f" secondAttribute="trailing" constant="-16" id="bGy-bQ-8tq"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="KZf-Vm-07f" secondAttribute="bottom" id="pp9-Jj-yR1"/>
+                            <constraint firstAttribute="centerX" secondItem="OrZ-OA-JoR" secondAttribute="centerX" id="q8J-jX-GLa"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yaU-MG-CUq"/>
